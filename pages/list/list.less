@@ -1,0 +1,72 @@
+.con-top{
+  border-top: 1px solid #444;
+  display: flex;
+  align-items: center;
+  .search{
+    height: 60rpx;
+    background: #fff;
+    margin: 20rpx;
+    border-radius: 10rpx;
+    width: 100%;
+    label{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      view{
+        font-size: 28rpx;
+        margin-left: 10rpx;
+        color: #ccc;
+      }
+    }
+  }
+  .active{
+    width: 80%;
+    .search-fome{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      icon{
+        margin: 10rpx;
+      }
+      input{
+        width: 100%;
+      }
+    }
+  }
+  .no{
+    color: darkgreen;
+  }
+}
+.cells{
+  background-color: #fff;
+  navigator{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1rpx solid #eee;
+    image{
+      width: 160rpx;
+      height: 160rpx;
+      margin: 20rpx;
+    }
+    .meta{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 10rpx 0;
+      font-size: 30rpx;
+      .name{
+        color: #234;
+        font-size: 28rpx;
+      }
+      .phone ,.address{
+        color: #678;
+        font-size: 24rpx;
+      }
+      .hours {
+        color: #456;
+        font-size: 22rpx;
+      }
+    }
+  }
+}

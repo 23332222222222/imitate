@@ -1,0 +1,73 @@
+.con-top {
+  border-top: 1px solid #444;
+  display: flex;
+  align-items: center;
+}
+.con-top .search {
+  height: 60rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  width: 100%;
+}
+.con-top .search label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.con-top .search label view {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  color: #ccc;
+}
+.con-top .active {
+  width: 80%;
+}
+.con-top .active .search-fome {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.con-top .active .search-fome icon {
+  margin: 10rpx;
+}
+.con-top .active .search-fome input {
+  width: 100%;
+}
+.con-top .no {
+  color: darkgreen;
+}
+.cells {
+  background-color: #fff;
+}
+.cells navigator {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1rpx solid #eee;
+}
+.cells navigator image {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+}
+.cells navigator .meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+}
+.cells navigator .meta .name {
+  color: #234;
+  font-size: 28rpx;
+}
+.cells navigator .meta .phone,
+.cells navigator .meta .address {
+  color: #678;
+  font-size: 24rpx;
+}
+.cells navigator .meta .hours {
+  color: #456;
+  font-size: 22rpx;
+}
