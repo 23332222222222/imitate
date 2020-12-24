@@ -1,22 +1,29 @@
-// pages/profile/profile.js
+ const fetch =require('../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:null
+    shop:{}
   },
-  getUserInfo(e){
-    this.setData({
-      userInfo:e.detail.userInfo
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    fetch(`shops/${options.item}`).then(res=>{
+      this.setData({
+        shop:res.data
+      })
+      wx.setNavigationBarTitle({ title: res.data.name })
+    })
+  },
+  topHandler:function(e){
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: this.data.shop.images
+    })
   },
 
   /**

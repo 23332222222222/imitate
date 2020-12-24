@@ -64,6 +64,18 @@
         {
           "name": "pages/list/list",
           "pathName": "pages/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/messages/messages",
+          "pathName": "pages/messages/messages",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/profile/profile",
+          "pathName": "pages/profile/profile",
           "scene": null
         }
       ]

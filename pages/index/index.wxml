@@ -15,7 +15,7 @@
 </view>
 
 <view class="links">
-  <navigator url="/pages/list/list?typr=recommend">
+  <navigator url="/pages/list/list?typr=recommend" >
     <image src="../../assets/link-01.png" mode="scaleToFill"></image>
   </navigator>
   <navigator url="/pages/forum/forum"> 

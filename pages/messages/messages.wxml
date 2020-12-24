@@ -1,2 +1,12 @@
-<!--pages/messages/messages.wxml-->
-<text>pages/messages/messages.wxml</text>
+<view wx:for="{{messages}}" class="messages">
+  <navigator class="item-title">
+    <text>{{item.title}}</text>
+  </navigator>
+  <text class="text">{{item.data}}</text>
+  <navigator url="https://www.baidu.com" class="image">
+    <image src="{{item.image}}" />
+    <text class="summary">{{item.Sptember}}</text>
+  </navigator>
+  <navigator class="expand">Read All</navigator>
+</view>
+<view id="bottom"></view>

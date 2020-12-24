@@ -6,7 +6,7 @@ Page({
    */
   data: {
     category:null,
-    bol:false,
+    bol:true,
     pageIndex: 0,
     pageSize: 20,
     totalCount: 0,
@@ -17,7 +17,7 @@ Page({
   bol:function(){
     var bol= this.data.bol
     this.setData({
-      bol:!bol,pageIndex: 0,
+      bol:!bol
     })
   },
   searchHandler:function(){
@@ -27,17 +27,36 @@ Page({
     this.bol()
   },
   lodeMode:function(){
+    if(!this.data.hasMore) return
     let{pageIndex,pageSize,text}=this.data
-    if(text) paeame.q = text
-    var paeame={_page:++pageIndex,_limit:pageSize}
-    return fetch(`categories/${this.data.category.id}/shops`,paeame).then(res=>{
-      const totalCount=parseInt(res.header['X-Total-Count'])
+    const params = { _page: ++pageIndex, _limit: pageSize }
+    // console.log(params);
+    if(text) params.q = text
+    return fetch(`categories/${this.data.category.id}/shops`, params).then(res=>{
+      // console.log(res.header['x-total-count']);
+      const totalCount=parseInt(res.header['x-total-count'])
       const hasMore=this.data.pageIndex*this.data.pageSize <totalCount
+      // console.log(hasMore,this.data.pageIndex);
       const shops =this.data.shops.concat(res.data)
       this.setData({
         shops,totalCount,pageIndex,hasMore
       })
     })
+  },
+  inputHandler:function(e){
+    // console.log(e.detail.value);
+    if(!e.detail.value) return
+    this.setData({
+      text:e.detail.value,
+      pageIndex: 0,
+      totalCount: 0,
+      hasMore: true,
+      shops:[]
+    })
+    this.lodeMode().then(res=>{
+      this.setData({hasMore:false})
+    })
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -49,7 +68,7 @@ Page({
       this.lodeMode()
     })
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -81,14 +100,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      pageIndex: 0,
+      totalCount: 0,
+      hasMore: true,
+      text:'',
+      shops:[]
+    })
+    this.lodeMode().then(wx.stopPullDownRefresh())
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.lodeMode()
   },
 
   /**
