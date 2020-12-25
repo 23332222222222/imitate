@@ -4,13 +4,13 @@
 </view>
 
 <view class="cells">
-  <navigator class="item">个人资料</navigator>
-  <navigator class="item">我的优惠券</navigator>
+  <navigator class="item" wx:if="{{bol}}">个人资料</navigator>
+  <navigator class="item" wx:if="{{bol}}">我的优惠券</navigator>
+  <view class="divider" wx:if="{{bol}}"></view>
+  <navigator class="item" wx:if="{{bol}}">常见问题</navigator>
+  <navigator class="item" wx:if="{{bol}}">使用条款</navigator>
+  <navigator class="item" wx:if="{{bol}}">隐私权政策</navigator>
+  <navigator class="item" bindtap="topHandler" wx:if="{{bol}}">联系客服</navigator>
   <view class="divider"></view>
-  <navigator class="item">常见问题</navigator>
-  <navigator class="item">使用条款</navigator>
-  <navigator class="item">隐私权政策</navigator>
-  <navigator class="item">联系客服</navigator>
-  <view class="divider"></view>
-  <navigator url="/pages/settings/settings" class="item">设置</navigator>
+  <navigator url="/pages/setup/setup" class="item">设置</navigator>
 </view>

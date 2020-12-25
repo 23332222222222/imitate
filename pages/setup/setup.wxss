@@ -1,0 +1,34 @@
+.one {
+  margin-top: 20rpx;
+}
+.one view {
+  display: flex;
+  border-bottom: 1rpx solid #ddd;
+  background: #fff;
+  padding: 20rpx;
+  margin: 0 20rpx;
+  border-radius: 10rpx;
+}
+.one view text {
+  flex: 9;
+}
+.one view switch {
+  flex: 1;
+}
+.two {
+  margin-top: 20rpx;
+}
+.two view {
+  display: flex;
+  border-bottom: 1rpx solid #ddd;
+  background: #fff;
+  padding: 20rpx;
+  margin: 0 20rpx;
+  border-radius: 10rpx;
+}
+.two view text {
+  flex: 9;
+}
+.two view switch {
+  flex: 1;
+}

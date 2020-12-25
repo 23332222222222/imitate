@@ -1,0 +1,28 @@
+<view class="one">
+  <view>
+  <text>个人资料</text>
+  <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+<view>
+  <text>我的优惠券</text>
+  <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+</view>
+<view class="two">
+  <view>
+  <text>常见问题</text>
+  <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+  <view>
+    <text>使用条款</text>
+    <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+  <view>
+    <text>隐私政策</text>
+    <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+  <view>
+    <text>联系客服</text>
+    <switch checked="{{switch}}" bindchange="changeHandler"></switch>
+  </view>
+</view>

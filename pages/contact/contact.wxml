@@ -1,2 +1,4 @@
-<!--pages/contact/contact.wxml-->
-<text>pages/contact/contact.wxml</text>
+<view>
+  <text>电话：***************</text>
+  <text>Email:***************</text>
+</view>

@@ -1,39 +1,36 @@
-// pages/profile/profile.js
+// pages/setup/setup.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:null,
-    bol:true
+    switch:true
   },
-  getUserInfo(e){
-    this.setData({
-      userInfo:e.detail.userInfo
-    })
+  save:function(){
+    wx.setStorageSync('key', this.data.switch)
   },
-  topHandler:function(){
-    wx.switchTab({
-      url: '/pages/contact/contact',
-    })
-  },
-
-  changeName: function(name){
-    console.log(name);
-    this.setData({
-      bol: name
-    })
+  changeHandler:function(e){
+    console.log(e);
+    this.setData({switch:e.detail.value})
+    this.save()
+    var pages=getCurrentPages()
+    if (pages.length > 1) {
+      //上一个页面实例对象
+      var prePage = pages[pages.length - 2];
+      //关键在这里  changeData为上一页的方法
+      prePage.changeName(this.data.switch)
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    
     if(wx.getStorageSync('key')===0) return
     console.log(wx.getStorageSync('key'));
     this.setData({
-      bol:wx.getStorageSync('key')
+      switch:wx.getStorageSync('key')
     })
   },
 

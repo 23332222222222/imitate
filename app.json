@@ -6,7 +6,8 @@
     "pages/contact/contact",
     "pages/list/list",
     "pages/forum/forum",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/setup/setup"
   ],
   "tabBar": {
     "color": "#999",
