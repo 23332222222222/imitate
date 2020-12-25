@@ -15,5 +15,26 @@ Page({
         categories:res.data
       })
     })
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (res) {
+    if(res.from==='menu'){
+      console.log(res.target);
+    }
+    return{
+      title:'本地宝',
+      path:'/pages/index/index'
+    }
+  },
+  onShareTimeline:function(){
+    if(res.from==='menu'){
+      console.log(res.target);
+    }
+    return{
+      title:'本地宝',
+      path:'/pages/index/index'
+    }
   }
 })
